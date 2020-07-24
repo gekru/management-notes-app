@@ -1,6 +1,7 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
+
 describe('workspace-project App', () => {
   let page: AppPage;
 
@@ -8,9 +9,11 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display table name', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('management-notes-app app is running!');
+    browser.ignoreSynchronization = true;
+    //browser.sleep(50000);
+    expect(page.getNotesTableName()).toEqual('Management Notes');
   });
 
   afterEach(async () => {
